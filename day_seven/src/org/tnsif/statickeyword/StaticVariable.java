@@ -39,8 +39,8 @@ class Employee
 
 	public void display()
 	{
-	//ystem.out.println(" Emp Id :"+this.getEmpID()+" "+" Emp name : "+this.name+" "
-	//	+ ""+ "company name : "+Employee.compName();
+		System.out.println(" Emp Id :"+this.getEmpId()+" "+" Emp name : "+this.name+" "
+				+ ""+ "company name : "+Employee.compName);
 		
 	}
 	
