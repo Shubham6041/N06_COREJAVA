@@ -231,3 +231,25 @@ class Main{
     }
 }
 ```
+## 8.How do you total all of the matching integer elements in an array?
+```java
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int arr[] = {1, 2, 4, 5, 3, 4};
+       int target = 4;
+       int sum = 0;
+       
+       for(int i=0; i<arr.length; i++)
+       {
+           if(arr[i] == target)
+           {
+               sum = sum + arr[i];
+           }
+       }
+       
+       System.out.println("Sum of matching element is : "+sum);
+    }
+}
+```
