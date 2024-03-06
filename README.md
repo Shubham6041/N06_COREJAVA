@@ -98,3 +98,47 @@ class Main{
     }
 }
 ```
+
+## 5.How do you find out if the two given strings are anagrams?
+
+```java
+import java.util.Arrays;
+class Main{
+    
+    public static void main(String[] args)
+    {
+        String str = "Listen";
+		String str1 = "Silent";
+		
+		str = str.toLowerCase();
+		str1 = str1.toLowerCase();
+		
+		if(str.length() == str1.length())
+		{
+			char[] str2 = str.toCharArray();
+			char[] str3 = str1.toCharArray();
+		
+			
+			Arrays.sort(str2);
+			Arrays.sort(str3);
+			
+			boolean result = Arrays.equals(str2, str3);
+			
+			if(result)
+			{
+				System.out.println("Anagram");
+			}
+			else
+			{
+				System.out.println("Not anagram");
+			}
+			
+		}
+		else
+		{
+			System.out.println("Not anagram");
+		}
+      
+    }
+}
+```
