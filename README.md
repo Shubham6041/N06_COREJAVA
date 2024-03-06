@@ -142,3 +142,34 @@ class Main{
     }
 }
 ```
+
+## 6.How do you find the non-matching characters in a string?
+
+```java
+import java.util.Arrays;
+class Main{
+    
+    public static void main(String[] args)
+    {
+        String str = "Hello";
+		String str1 = "Hallo";
+		
+		if(str.length() != str1.length())
+		{
+		    System.out.println("Strings of different length");
+		    
+		}
+		else
+		{
+		    for(int i=0; i<=str.length()-1; i++)
+		    {
+		        if(str.charAt(i) != str1.charAt(i))
+		        {
+		            System.out.println("Character not matched at index : "+i);
+		        }
+		    }
+		}
+      
+    }
+}
+```
