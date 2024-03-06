@@ -291,3 +291,231 @@ class Main{
     }
 }
 ```
+## 11. How do you find the smallest element in an array?
+```java
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int arr[] = {1, 2, 3, 4, 5};
+       int min = arr[0];
+       
+       for(int i=1; i<arr.length; i++)
+       {
+           if(arr[i] < min)
+           {
+               min = arr[i];
+           }
+       }
+       System.out.println(min);
+       
+    }
+}
+```
+## 12. How do you find the second largest element in an array?
+```java
+import java.util.Arrays;
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int arr[] = {1, 2, 3, 4, 5};
+       Arrays.sort(arr);
+       int secondLargest = arr.length-1;
+       System.out.println(secondLargest);
+       
+    }
+}
+```
+## 13. How do you find the second smallest element in an array?
+```java
+import java.util.Arrays;
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int arr[] = {7, 1, 5, 6, 2};
+       Arrays.sort(arr);
+       int secondSmallest = arr[1];
+       System.out.println(secondSmallest);
+       
+    }
+}
+```
+## 14.How do you sort an array of integers in ascending order?
+```java
+import java.util.Arrays;
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int arr[] = {7, 1, 5, 6, 2};
+       
+       int temp = 0;
+       for(int i=0; i<arr.length; i++)
+       {
+           for(int j=0; j<arr.length-1; j++)
+           {
+               if(arr[j]>arr[j+1])
+               {
+                   temp = arr[j];
+                   arr[j] = arr[j+1];
+                   arr[j+1] = temp;
+               }
+           }
+       }
+       
+       for(int n : arr)
+       {
+           System.out.print(n+" ");
+       }
+    }
+}
+```
+## 15.How do you print a Fibonacci sequence using recursion?
+```java
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int num1 = 0;
+       int num2 = 1;
+       
+       for(int i=0; i<=10; i++)
+       {
+           System.out.print(num1+" ");
+           int num3 = num1+num2;
+           num1 = num2;
+           num2 = num3;
+       }
+    }
+}
+```
+## 16.How do you find the average of numbers in an array?
+```java
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int arr[] = {2, 4 , 6, 8};
+       int sum = 0;
+       
+    //   for(int i=0; i<arr.length; i++)
+    //   {
+    //       sum = sum+arr[i];
+    //   }
+    
+        for(int n : arr)
+        {
+            sum = sum+n;
+        }
+       
+       int avg = sum/arr.length;
+       System.out.println(avg);
+    }
+}
+```
+## 17.How do you check if an integer is even or odd?
+```java
+class Main{
+    
+    public static void main(String[] args)
+    {
+       int num = 12;
+       
+       if(num%2 == 0)
+       {
+           System.out.println("Number is even");
+       }
+       else
+       {
+           System.out.println("Number is odd");
+       }
+    }
+}
+```
+## 18.How do you find the middle element of a linked list?
+```java
+import java.util.LinkedList;
+class Main{
+    
+    public static void main(String[] args)
+    {
+        LinkedList<Integer> nums = new LinkedList<Integer>();
+        nums.add(2);
+        nums.add(4);
+        nums.add(5);
+        nums.add(6);
+        nums.add(8);
+        
+        System.out.println(nums);
+        
+        int midIndex = nums.size()/2;
+        System.out.println("Mid element: "+nums.get(midIndex));
+    }
+}
+```
+## 19.How do you implement binary search to find an element in a sorted array?
+```java
+class Main{
+    
+    public static int binarySearch(int arr[], int target)
+    {
+        int left = 0;
+        int right = arr.length-1;
+        
+        while(left<=right)
+        {
+            int mid = (left+right)/2;
+            if(arr[mid] == target)
+            {
+                return mid;
+            }
+            else if(arr[mid] < target)
+            {
+                left = mid+1;
+            }
+            else
+            {
+                right = mid-1;
+            }
+        }
+        return -1;
+    }
+    
+    public static void main(String[] args)
+    {
+       int arr[] = {1, 2, 3, 4, 5, 6};
+       int target = 2;
+       
+       int result = binarySearch(arr, target);
+       
+       if(result != -1)
+       {
+           System.out.println("Value found at index : "+result);
+       }
+       else
+       {
+           System.out.println("Value not found");
+       }
+    }
+}
+```
+## 20. How would you swap two numbers without using a third variable?
+```java
+class Main{
+    
+    public static void main(String[] args)
+    {
+        int a = 4;
+        int b = 5;
+        
+        b = a + b;
+        a = b - a;
+        b = b - a;
+        
+        System.out.println("a : "+a);
+        System.out.println("b : "+b);
+    }
+}
+```
