@@ -74,3 +74,27 @@ class Main{
     }
 }
 ```
+## 4.How do you find the count for the occurrence of a particular character in a string?
+
+```java
+class Main{
+    
+    public static void main(String[] args)
+    {
+       String str = "Hello";
+       int size = str.length();
+       char c = 'l';
+       int count = 0;
+       
+       for(int i=0; i<=size-1; i++)
+       {
+           if(str.charAt(i) == c)
+           {
+               count++;
+           }
+       }
+       System.out.println(count);
+      
+    }
+}
+```
