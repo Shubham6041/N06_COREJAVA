@@ -255,19 +255,32 @@ class Main{
 ```
 ## 9.How do you reverse an array?
 ```java
-class Main{
-    
-    public static void main(String[] args)
-    {
-       int arr[] = {1, 2, 3, 4, 5};
-       int size = arr.length;
-       
-       for(int i=size-1; i>=0; i--)
-       {
-           System.out.print(arr[i]+" ");
-       }
-       
-    }
+package com.array.codingproblems;
+public class reverseArray {
+	
+	public static void reverse(int arr[], int size)
+	{
+		int a[] = new int[size];
+		int j = size;
+		
+		for(int i=0; i<size; i++)
+		{
+			a[j-1] = arr[i];
+			j--;
+		}
+		
+		System.out.println("Array after reverse : ");
+		for(int k : a)
+		{
+			System.out.print(k+" ");
+		}
+	}
+
+	public static void main(String[] args) {
+		int arr[] = {2, 4, 6, 8, 9};
+		int size = arr.length;	
+		reverse(arr, size);
+	}
 }
 ```
 ## 10. How do you find the maximum element in an array?
