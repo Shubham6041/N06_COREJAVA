@@ -532,3 +532,48 @@ class Main{
     }
 }
 ```
+## 21.How do you remove all occurrences of a given character from the input string?
+```java
+class Main {
+    public static void main(String[] args) {
+        String str = "Hello";
+        str = str.replace("l", "");
+        
+        System.out.println(str);
+    }
+}
+```
+## 22.How do you check if the given number is prime?
+```java
+import java.util.Scanner;
+
+class Main {
+    
+    public static boolean prime(int num){
+        if(num == 0 || num == 1){
+            return false;
+        }
+        if(num == 2){
+            return true;
+        }
+        
+        for(int i=2; i<=num/2; i++){
+            if(num%i == 0){
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a number : ");
+        int num = s.nextInt();
+        
+        boolean result = prime(num);
+        System.out.println(result);
+        
+    }
+}
+```
