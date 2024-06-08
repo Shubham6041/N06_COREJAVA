@@ -577,3 +577,101 @@ class Main {
     }
 }
 ```
+## 23. Reverse words in a given string
+```java
+
+class Main {
+    public static void main(String[] args) {
+        String str = "Sachin Ramesh Tendulkar";
+        
+        String[] words = str.split(" ");
+        int size = words.length;
+        
+        StringBuilder s = new StringBuilder();
+        for(int i=size-1; i>=0; i--){
+            s.append(words[i]);
+            
+            if(i != 0){
+                s.append(" ");
+            }
+        }
+        
+        System.out.println(s.toString());
+    }
+}
+```
+## 24. Given a set of strings, find the longest common prefix.
+```java
+
+class Main {
+    public static void main(String[] args) {
+        String[] str = {"Apple", "App", "Appearance"};
+        
+        String first = str[0];
+        String last = str[str.length-1];
+        
+       int min = Math.min(first.length(), last.length());
+       
+       int i = 0;
+       while(i < min && first.charAt(i) == last.charAt(i)){
+           i++;
+       }
+       
+       System.out.println(first.substring(0, i));
+    }
+}
+```
+## 25. Given a string in roman form, the task is to convert this given roman string into an integer.
+```java
+
+class Main {
+    public static int value(char r){
+        if(r == 'I'){
+            return 1;
+        }
+        if(r == 'V'){
+            return 5;
+        }
+        if(r == 'X'){
+            return 10;
+        }
+        if(r == 'L'){
+            return 50;
+        }
+        if(r == 'C'){
+            return 100;
+        }
+        if(r == 'D'){
+            return 500;
+        }
+        if(r == 'M'){
+            return 1000;
+        }
+        return -1;
+       
+    }
+    
+    public static int romanToInt(String s){
+        int length = s.length();
+        int result = 0;
+        
+        for(int i=0; i<length; i++){
+            int current = value(s.charAt(i));
+            
+            if(i+1 < length && current < value(s.charAt(i+1))){
+                result = result - current;
+            }
+            else{
+                result = result + current;
+            }
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        String str = "XVI";
+        int result = romanToInt(str);
+        System.out.println(result);
+    }
+}
+```
