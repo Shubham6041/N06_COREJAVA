@@ -675,3 +675,96 @@ class Main {
     }
 }
 ```
+## 26. write a program to capitalize each word in string.
+```java
+import java.util.Scanner;
+class Main {
+    public static String capitalizeWord(String str){
+        String[] words = str.split(" ");
+        String str1 = "";
+        
+        for(String i : words){
+            String first = i.substring(0, 1);
+            String second = i.substring(1);
+            
+            str1 = str1 + first.toUpperCase()+second+" ";
+        }
+        return str1.trim();
+    }
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter a string : ");
+        String str = s.nextLine();
+        
+        //String str = "sachin ramesh tendulkar";
+        
+        String result = capitalizeWord(str);
+        System.out.println(result);
+        
+        
+    }
+}
+```
+## 27. Write a program to reverse each word in a string.
+```java
+import java.util.Scanner;
+class Main {
+    public static String reverseWord(String str){
+        String[] words = str.split(" ");
+        String str1 = "";
+        
+        for(String i : words){
+            StringBuilder s = new StringBuilder(i);
+            s.reverse();
+            
+            str1 = str1 + s.toString() + " ";
+        }
+        return str1.trim();
+    }
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter a string : ");
+        String str = s.nextLine();
+        
+        //String str = "sachin ramesh tendulkar";
+        
+        String result = reverseWord(str);
+        System.out.println(result);
+        
+        
+    }
+}
+```
+## 28. Write a program to tOGGLE each word in String.
+```java
+import java.util.Scanner;
+class Main {
+    public static String toggle(String str){
+        String[] words = str.split(" ");
+        String str1 = "";
+        
+        for(String i : words){
+            String first = i.substring(0, 1);
+            String second = i.substring(1);
+            
+            str1 = str1 + first.toLowerCase() + second.toUpperCase() + " ";
+        }
+        return str1.trim();
+    }
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter a string : ");
+        String str = s.nextLine();
+        
+        //String str = "sachin ramesh tendulkar";
+        
+        String result = toggle(str);
+        System.out.println(result);
+        
+        
+    }
+}
+```
