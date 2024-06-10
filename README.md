@@ -763,8 +763,128 @@ class Main {
         
         String result = toggle(str);
         System.out.println(result);
+    }
+}
+```
+## 29. Write a java program to reverse tOGGLE each word in String.
+```java
+class Main {
+    public static String reverseToggle(String str){
+        String[] words = str.split(" ");
+        String str1 = "";
         
+        for(String i: words){
+            StringBuilder s = new StringBuilder(i);
+            s.reverse();
+            
+            String first = s.substring(0, 1);
+            String second = s.substring(1);
+            
+            str1 += first.toLowerCase() + second.toUpperCase() + " ";
+        }
         
+        return str1.trim();
+    }
+    
+    public static void main(String[] args) {
+        String str = "Sachin Ramesh Tendulkar";
+        
+        String result = reverseToggle(str);
+        System.out.println(result);
+    }
+}
+```
+## 30. How to convert String to Integer and Integer to String in java?
+```java
+
+class Main {
+
+    public static void main(String[] args) {
+        String str = "11";
+        int result = Integer.parseInt(str);
+        System.out.println(result);
+        
+        String str1 = "12";
+        Integer num = Integer.valueOf(str1);
+        System.out.println(num+" : "+num.getClass());
+        
+        int n = 13;
+        String str2 = Integer.toString(n);
+        System.out.println(str2+" : "+str2.getClass());
+    }
+}
+```
+## 31. How to remove all white spaces from a String in Java?
+```java
+class Main {
+
+    public static void main(String[] args) {
+        String str = "  Hello, What are you   doing?  ";
+        str = str.replaceAll(" ", "");
+        System.out.println(str);
+    }
+}
+```
+## 32. Write a code to check whether one string is a rotation of another?
+```java
+import java.util.Scanner;
+class Main {
+    public static boolean isRotation(String str, String str1){
+        if(str.length() != str1.length()){
+            return false;
+        }
+        
+        String str2 = str + str;
+        
+        if(str2.contains(str1)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+       Scanner s = new Scanner(System.in);
+       System.out.println("Enter the first string : ");
+       String str = s.nextLine();
+       System.out.println("Enter the second string : ");
+       String str1 = s.nextLine();
+       
+       boolean result = isRotation(str, str1);
+       System.out.println(result);
+    }
+}
+```
+## 33. Write a Java program to count the number of words in a string?
+```java
+import java.util.Scanner;
+class Main {
+    public static int countWords(String str){
+       int count = 0;
+       
+       char[] arr = new char[str.length()];
+       
+       for(int i=0; i<str.length(); i++){
+           arr[i] = str.charAt(i);
+           
+           if((i>0 && arr[i] != ' ' && arr[i-1] == ' ') || (arr[i] != ' ' && i == 0)){
+               count++;
+           }
+       }
+       
+       return count;
+    }
+
+    public static void main(String[] args) {
+       Scanner s = new Scanner(System.in);
+       System.out.println("Enter the string : ");
+       String str = s.nextLine();
+      
+       int result = countWords(str);
+       System.out.println(result);
+       
+       s.close();
     }
 }
 ```
