@@ -580,7 +580,23 @@ class Main {
 ## 23. Reverse words in a given string
 ```java
 
+
+
 class Main {
+
+    /*public static void main(String[] args) {
+	
+	String str = "Shubham Balu Tile";
+	String[] words = str.split(" ");
+	
+	String str1 = "";
+	
+	for(int i=words.length-1; i>=0; i--) {
+		str1 = str1 + words[i] + " ";
+	}
+	System.out.println(str1);
+    }*/
+
     public static void main(String[] args) {
         String str = "Sachin Ramesh Tendulkar";
         
