@@ -334,7 +334,7 @@ class Main{
     {
        int arr[] = {1, 2, 3, 4, 5};
        Arrays.sort(arr);
-       int secondLargest = arr.length-1;
+       int secondLargest = arr.length-2;
        System.out.println(secondLargest);
        
     }
